@@ -1,0 +1,1 @@
+web: gunicorn memorable_places.wsgi

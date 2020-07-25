@@ -1,9 +1,12 @@
 from django.db import models
 from django.urls import reverse
+from django.contrib.auth.models import User
 
 class MemoryItem(models.Model):
     name = models.CharField(max_length=64)
     comment = models.TextField()
+    owner = models.ForeignKey(User, on_delete=models.CASCADE,
+                            related_name='memories')
 
     def __str__(self):
         return self.name

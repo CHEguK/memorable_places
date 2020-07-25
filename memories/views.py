@@ -12,6 +12,11 @@ class MemoriesListView(ListView):
     context_object_name = 'memories'
     template_name = "memories/list.html"
 
+    def get_queryset(self):
+        u = self.request.user
+        if u.is_anonymous:
+            return []
+        return u.memories.all()
 
 class MemoriesCreateView(View):
     def my_render(self, request, form):

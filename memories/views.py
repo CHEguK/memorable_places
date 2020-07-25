@@ -11,3 +11,7 @@ def memories_list(request):
                 'memories/list.html',
                 {'memories': all_memories}
                 )
+
+def memories_create(request):
+    return render(request, 'memories/create.html',)
+    

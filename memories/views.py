@@ -25,8 +25,10 @@ class MemoriesCreateView(View):
     def post(self, request, *args, **kwargs):
         form = MemoryItemForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect("/memories/list")
+            new_memory = form.save(commit=False)
+            new_memory.owner = request.user
+            new_memory.save()
+            return redirect(reverse(viewname="memories:list"))
         return self.my_render(request, form)
 
     def get(self, request, *args, **kwargs):

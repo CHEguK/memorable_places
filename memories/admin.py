@@ -1,3 +1,4 @@
 from django.contrib import admin
+from memories.models import MemoryItem
 
-# Register your models here.
+admin.site.register(MemoryItem)

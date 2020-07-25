@@ -22,4 +22,5 @@ app_name = 'memories'
 urlpatterns = [
     path('list/', views.memories_list, name='list'),
     path('create/', views.memories_create, name='create'),
+    path('add-memories/', views.add_memory, name='add-memories'),
 ]

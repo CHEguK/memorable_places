@@ -2,8 +2,9 @@
 {% block title %}Создать воспоминание{% endblock %}
 {% block main_content %}
 <h1>Создать воспоминание</h1>
-<form action="/add-tasks" method="post" class="memories-create">
-    <input type="text" name="description" class="form-control"/>
+<form action="." method="post" class="memories-create">
+    {{ form }}
+    {% csrf_token %}
     <button class="add" type="submit">+</button>
 </form>
 {% endblock %}

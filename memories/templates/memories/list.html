@@ -4,6 +4,9 @@
 <div class="container">
     <h1>Ваши воспоминания</h1>
     <ul id="memory-list">
+        {% if not memories %}
+        <p>У вас пока ни одного воспоминания</p>
+        {% endif %}
         {% for memory in memories %}
         <li>
             <a href={% url "memories:details" memory.id %}>{{ memory.name }}</a>

@@ -1,1 +1,4 @@
 var.txt
+.vscode/
+
+.pytest_cache/

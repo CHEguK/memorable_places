@@ -6,7 +6,7 @@
     <ul id="memory-list">
         {% for memory in memories %}
         <li>
-            {{ memory.name }}
+            <a href={% url "memories:details" memory.id %}>{{ memory.name }}</a>
             <a class="remove" href={% url "memories:delete" memory.id %}>X</a>
             <hr/>
         </li>

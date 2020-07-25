@@ -4,6 +4,7 @@ from memories.models import MemoryItem
 from memories.forms import MemoryItemForm
 from django.views import View
 from django.views.generic import ListView
+from django.views.generic.detail import DetailView
 
 
 class MemoriesListView(ListView):
@@ -27,9 +28,11 @@ class MemoriesCreateView(View):
         form = MemoryItemForm()
         return self.my_render(request, form)
 
+class MemoryDetailsView(DetailView):
+    model = MemoryItem
+    template_name = 'memories/details.html'
 
 def delete_memory(request, uid):
     m = MemoryItem.objects.get(id=uid)
     m.delete()
     return redirect(reverse(viewname="memories:list"))
-    

@@ -1,0 +1,11 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Воспоминание {{ object.id }}{% endblock %}
+{% block main_content %}
+    <h1>Воспоминание</h1>
+    <ul>
+        <li>Название: {{ object.name }}</li>
+        <li>Комментарий: {{ object.comment }}</li>
+    </ul>
+    <a href={% url "memories:list" %}>Назад к списку</a>
+{% endblock %}

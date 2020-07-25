@@ -2,16 +2,14 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from memories.models import MemoryItem
 from memories.forms import MemoryItemForm
+from django.views.generic import ListView
 
 
-def memories_list(request):
-    all_memories = MemoryItem.objects.all()
+class MemoriesListView(ListView):
+    queryset = MemoryItem.objects.all()
+    context_object_name = 'memories'
+    template_name = "memories/list.html"
 
-    return render(
-                request,
-                'memories/list.html',
-                {'memories': all_memories}
-                )
 
 def memories_create(request):
     if request.method == "POST":

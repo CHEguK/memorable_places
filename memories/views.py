@@ -26,12 +26,4 @@ class MemoriesCreateView(View):
     def get(self, request, *args, **kwargs):
         form = MemoryItemForm()
         return self.my_render(request, form)
-
-
-def add_memory(request):
-    if request.method == "POST":
-        name = request.POST["description"]
-        m = MemoryItem(name=name)
-        m.save()
-    return redirect('/memories/list')
     

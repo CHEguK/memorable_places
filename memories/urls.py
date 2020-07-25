@@ -20,5 +20,5 @@ from . import views
 app_name = 'memories'
 
 urlpatterns = [
-
+    path('list/', views.memories_list, name='list'),
 ]

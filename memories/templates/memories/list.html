@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+{% block title %}Ваши воспоминания{% endblock %}
+{% block main_content %}
+<div class="container">
+    <h1>Ваши воспоминания</h1>
+    <ul id="memory-list">
+        {% for memory in memories %}
+        <li>
+            {{ memory.name }}
+            <a class="remove" href="/api/delete/{{ memory.id }}">X</a>
+            <hr/>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+{% endblock %}

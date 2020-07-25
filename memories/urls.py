@@ -20,6 +20,7 @@ from . import views
 app_name = 'memories'
 
 urlpatterns = [
+    path('', views.index),
     path('list/', views.MemoriesListView.as_view(), name='list'),
     path('create/', views.MemoriesCreateView.as_view(), name='create'),
     path('delete/<int:uid>', views.delete_memory, name='delete'),

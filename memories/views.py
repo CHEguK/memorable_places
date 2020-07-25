@@ -5,7 +5,11 @@ from memories.forms import MemoryItemForm
 from django.views import View
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
+from django.contrib.auth.decorators import login_required
 
+@login_required
+def index(request):
+    return HttpResponse('Ваши воспоминания Туть')
 
 class MemoriesListView(ListView):
     queryset = MemoryItem.objects.all()

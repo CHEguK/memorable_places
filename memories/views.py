@@ -26,4 +26,10 @@ class MemoriesCreateView(View):
     def get(self, request, *args, **kwargs):
         form = MemoryItemForm()
         return self.my_render(request, form)
+
+
+def delete_memory(request, uid):
+    m = MemoryItem.objects.get(id=uid)
+    m.delete()
+    return redirect(reverse(viewname="memories:list"))
     

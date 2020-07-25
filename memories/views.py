@@ -13,16 +13,19 @@ class MemoriesListView(ListView):
 
 
 class MemoriesCreateView(View):
+    def my_render(self, request, form):
+        return render(request, "memories/create.html", {"form": form})
+
     def post(self, request, *args, **kwargs):
         form = MemoryItemForm(request.POST)
         if form.is_valid():
             form.save()
             return redirect("/memories/list")
-        return render(request, "memories/create.html", {"form": form})
+        return self.my_render(request, form)
 
     def get(self, request, *args, **kwargs):
         form = MemoryItemForm()
-        return render(request, "memories/create.html", {"form": form})
+        return self.my_render(request, form)
 
 
 def add_memory(request):

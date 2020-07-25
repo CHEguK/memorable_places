@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from memories.models import MemoryItem
 from memories.forms import MemoryItemForm
+from django.views import View
 from django.views.generic import ListView
 
 
@@ -11,15 +12,17 @@ class MemoriesListView(ListView):
     template_name = "memories/list.html"
 
 
-def memories_create(request):
-    if request.method == "POST":
+class MemoriesCreateView(View):
+    def post(self, request, *args, **kwargs):
         form = MemoryItemForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect(reverse(viewname="memories:list"))
-    else:
+            return redirect("/memories/list")
+        return render(request, "memories/create.html", {"form": form})
+
+    def get(self, request, *args, **kwargs):
         form = MemoryItemForm()
-    return render(request, 'memories/create.html', {"form": form})
+        return render(request, "memories/create.html", {"form": form})
 
 
 def add_memory(request):

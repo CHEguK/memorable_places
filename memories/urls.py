@@ -21,6 +21,6 @@ app_name = 'memories'
 
 urlpatterns = [
     path('list/', views.MemoriesListView.as_view(), name='list'),
-    path('create/', views.memories_create, name='create'),
+    path('create/', views.MemoriesCreateView.as_view(), name='create'),
     path('add-memories/', views.add_memory, name='add-memories'),
 ]

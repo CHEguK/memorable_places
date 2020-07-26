@@ -8,12 +8,18 @@
 {% else %}
 <p>введите логин/пароль:</p>
 {% endif %}
+
 <form action="." method="POST" class="login">
     {{ form.as_p }}
     {% csrf_token %}
-    <button type="submit">Войти</button>
+    <button class='btn-primary mp-3' style="color:black" type="submit">Войти</button>
 </form>
+</br>
+
+<button class='btn-primary mp-3'><a style="color:black" href={% url "accounts:register" %}>Зарегистрироваться</a></button>
 </br></br>
+
+
 <p>Или вы можете войти через Facebook:</p>
 <div class="row">
     <div class="col-md-8 mx-auto social-container my-2 order-md-1">

@@ -4,7 +4,11 @@
     <h1>Создать аккаунт</h1>
     <p>Воспользуйтесь следующей формой:</p>
     <form action="." method="post">
-        {{ user_form.as_p }}
+        {% for field in user_form %}
+        <div class='field'>
+            {{ field.label_tag }} {{ field }}
+        </div>
+        {% endfor %}
         {% csrf_token %}
     <p><input type="submit" value="Создать"></p>
     </form>

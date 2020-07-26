@@ -7,13 +7,17 @@
 
 {% block main_content %}
 <style>
-	#map { position: absolute; top: 360px; bottom: -350px; width: 100%;}
+	#map { position: absolute; top: 320px; bottom: -340px; width: 100%;}
 </style>
 <h1>Создать воспоминание</h1>
 <form action="." method="post" class="memories-create">
-    {{ form }}
+    {% for field in form %}
+        <div class='field'>
+            {{ field.label_tag }} {{ field }}
+        </div>
+    {% endfor %}
     {% csrf_token %}
-    <button class="add" type="submit">+</button>
+    <button class="add" type="submit">Сохранить</button>
 </form>
 
 <div id="map"></div>
@@ -32,7 +36,9 @@
     display: none;
     }
 </style>
+
 <pre id="coordinates" class="coordinates"></pre>
+
 <script>
 	mapboxgl.accessToken = "{{ mapbox_token }}";
     var coordinates = document.getElementById('coordinates');

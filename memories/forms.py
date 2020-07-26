@@ -7,3 +7,4 @@ class MemoryItemForm(forms.ModelForm):
         model = MemoryItem
         fields = ('name', 'comment')
         labels = {"name": "Название", "comment": "Комментарий"}
+        widgets = {"comment": forms.Textarea(attrs={'rows': 5})}

@@ -13,10 +13,12 @@
     {% csrf_token %}
     <button type="submit">Войти</button>
 </form>
+</br></br>
+<p>Или вы можете войти через Facebook:</p>
 <div class="row">
     <div class="col-md-8 mx-auto social-container my-2 order-md-1">
         <button class="btn btn-primary mb-2">
-            <a href={% url 'social:begin' 'facebook' %}>Login with Facebook</a>
+            <a style="color:black" href={% url 'social:begin' 'facebook' %}>Facebook</a>
         </button>
     </div>
 </div>

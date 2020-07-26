@@ -11,6 +11,7 @@ gunicorn = "*"
 django = "*"
 psycopg2 = "*"
 social-auth-app-django = "*"
+django-easy-maps = "*"
 
 [requires]
 python_version = "3.8"

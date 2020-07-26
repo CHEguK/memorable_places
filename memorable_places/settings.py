@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'memories.apps.MemoriesConfig',
     'accounts.apps.AccountsConfig',
     'social_django',
+    'easy_maps',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,8 @@ AUTHENTICATION_BACKENDS = [
 
 SOCIAL_AUTH_FACEBOOK_KEY = os.getenv('SOCIAL_AUTH_FACEBOOK_KEY')        # App ID
 SOCIAL_AUTH_FACEBOOK_SECRET = os.getenv('SOCIAL_AUTH_FACEBOOK_SECRET')  # App Secret
+
+
+#Easy Maps
+EASY_MAPS_GOOGLE_KEY = os.getenv('EASY_MAPS_GOOGLE_KEY')
+EASY_MAPS_CENTER = (-41.3, 32)

@@ -1,10 +1,61 @@
 {% extends "base.html" %}
 {% block title %}Создать воспоминание{% endblock %}
+{% block extra_head %}
+<script src="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.js"></script>
+<link href="https://api.mapbox.com/mapbox-gl-js/v1.11.1/mapbox-gl.css" rel="stylesheet" />
+{% endblock %}
+
 {% block main_content %}
+<style>
+	#map { position: absolute; top: 360px; bottom: -350px; width: 100%;}
+</style>
 <h1>Создать воспоминание</h1>
 <form action="." method="post" class="memories-create">
     {{ form }}
     {% csrf_token %}
     <button class="add" type="submit">+</button>
 </form>
+
+<div id="map"></div>
+<style>
+    .coordinates {
+    background: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    position: absolute;
+    bottom: -270px;
+    left: 10px;
+    padding: 5px 10px;
+    margin: 0;
+    font-size: 11px;
+    line-height: 18px;
+    border-radius: 3px;
+    display: none;
+    }
+</style>
+<pre id="coordinates" class="coordinates"></pre>
+<script>
+	mapboxgl.accessToken = "{{ mapbox_token }}";
+    var coordinates = document.getElementById('coordinates');
+    var map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [0, 0],
+    zoom: 2
+    });
+    
+    var marker = new mapboxgl.Marker({
+    draggable: true
+    })
+    .setLngLat([0, 0])
+    .addTo(map);
+    
+    function onDragEnd() {
+    var lngLat = marker.getLngLat();
+    coordinates.style.display = 'block';
+    coordinates.innerHTML =
+    'Longitude: ' + lngLat.lng + '<br />Latitude: ' + lngLat.lat;
+    }
+    
+    marker.on('dragend', onDragEnd);
+</script>
 {% endblock %}

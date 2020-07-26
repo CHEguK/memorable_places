@@ -6,6 +6,7 @@ from django.views import View
 from django.views.generic import ListView
 from django.views.generic.detail import DetailView
 from django.contrib.auth.decorators import login_required
+from django.conf import settings
 
 @login_required
 def index(request):
@@ -23,8 +24,9 @@ class MemoriesListView(ListView):
         return u.memories.all()
 
 class MemoriesCreateView(View):
-    def my_render(self, request, form):
-        return render(request, "memories/create.html", {"form": form})
+    def my_render(self, request, form, **kwargs):
+        return render(request, "memories/create.html", {"form": form,
+                                                        "mapbox_token": kwargs['mapbox_token']})
 
     def post(self, request, *args, **kwargs):
         form = MemoryItemForm(request.POST)
@@ -37,7 +39,7 @@ class MemoriesCreateView(View):
 
     def get(self, request, *args, **kwargs):
         form = MemoryItemForm()
-        return self.my_render(request, form)
+        return self.my_render(request, form, mapbox_token=settings.MAPBOX_TOKEN)
 
 class MemoryDetailsView(DetailView):
     model = MemoryItem

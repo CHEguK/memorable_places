@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 {% block title %}Войдите{% endblock %}
 {% block main_content %}
+{% if not user.is_authenticated %}
 <h1>Вход</h1>
 {% if form.errors %}
 <p>Ошибка: пароль или логин неправильные. Попробуйте снова</p>
@@ -19,4 +20,7 @@
         </button>
     </div>
 </div>
+{% else %}
+<p>Вы уже вошли</p>
+{% endif %}
 {% endblock %}

@@ -10,6 +10,7 @@ parameterized = "*"
 gunicorn = "*"
 django = "*"
 psycopg2 = "*"
+social-auth-app-django = "*"
 
 [requires]
 python_version = "3.8"

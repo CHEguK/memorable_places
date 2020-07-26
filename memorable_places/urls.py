@@ -24,7 +24,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('memories/', include('memories.urls', namespace='memories')),
     path('', views.home, name='home'),
-    path('accounts/', include('accounts.urls', namespace='accounts'))
+    path('accounts/', include('accounts.urls', namespace='accounts')),
+    path('social-auth/', include('social_django.urls', namespace="social")),
 ]
 
 urlpatterns += staticfiles_urlpatterns() # for DEBUG = True

@@ -45,14 +45,14 @@
     var map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
-    center: [0, 0],
-    zoom: 2
+    center: [60.60388, 56.8444],
+    zoom: 7
     });
     
     var marker = new mapboxgl.Marker({
     draggable: true
     })
-    .setLngLat([0, 0])
+    .setLngLat([60.60388, 56.8444])
     .addTo(map);
     
     function onDragEnd() {

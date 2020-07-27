@@ -17,11 +17,11 @@ script:
 - python manage.py test
 
 # Deploy to heroku server
-deploy:
-  provider: heroku
-  api_key:
-    secure: HEROKU_API_TOKEN
-  app: immense-cove-99982
-  on:
-    repo:  CHEguK/memorable_places
-    branch: master
+# deploy:
+#   provider: heroku
+#   api_key:
+#     secure: HEROKU_API_TOKEN
+#   app: immense-cove-99982
+#   on:
+#     repo:  CHEguK/memorable_places
+#     branch: master

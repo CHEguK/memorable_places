@@ -21,6 +21,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# Token from https://www.mapbox.com/ for displaying the map in /memories/create.html
 MAPBOX_TOKEN = ''
 ```
 ## Pipenv
@@ -34,7 +36,7 @@ pip install -r requirements.txt
 ```
 ## Running locally
 ```bash
-export DJANGO_SETTINGS_MODULE=memorable_plaves.settings_dev
+export DJANGO_SETTINGS_MODULE='memorable_places.settings_dev'
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver

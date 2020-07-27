@@ -20,10 +20,10 @@ script:
 after_success:
   - coveralls
 
-# Deploy to heroku server
-# deploy:
-#   provider: heroku
-#   api_key:
-#     secure: HEROKU_API_KEY
-#   app: 
-#     master: immense-cove-99982
+Deploy to heroku server
+deploy:
+  provider: heroku
+  api_key:
+    secure: $HEROKU_API_KEY
+  app: 
+    master: immense-cove-99982

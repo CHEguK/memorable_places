@@ -15,6 +15,6 @@ script: python manage.py test
 deploy:
   provider: heroku
   api_key:
-    secure: ...
+    secure: $HEROKU_API_TOKEN
   app: 
     master: immense-cove-99982

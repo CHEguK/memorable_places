@@ -14,7 +14,7 @@ class RegistrationForm(forms.ModelForm):
     class Meta:
         model = User
         fields = ("username", "email", "first_name")
-        labels = {"username": 'Логин', "email": 'Пароль', "first_name": 'Имя'}
+        labels = {"username": 'Логин', "email": 'Email', "first_name": 'Имя'}
 
         def clean_password2(self):
             cd = self.cleaned_data

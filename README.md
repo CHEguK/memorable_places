@@ -34,7 +34,7 @@ pip install -r requirements.txt
 ```
 ## Running locally
 ```bash
-export DJANGO_SETTINGS_MODULE=memorable_plaves.settings_dev
+export DJANGO_SETTINGS_MODULE='memorable_places.settings_dev'
 python manage.py migrate
 python manage.py createsuperuser
 python manage.py runserver

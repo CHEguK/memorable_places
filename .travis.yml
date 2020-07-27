@@ -14,5 +14,3 @@ script: python manage.py test
 # Deploy to heroku server
 deploy:
   provider: heroku
-  api_key:
-    secure: HEROKU_API_TOKEN

@@ -25,3 +25,5 @@ deploy:
   api_key:
     secure: SECURE_KEY
   app: immense-cove-99982
+  on:
+    repo:  CHEguK/memorable_places 

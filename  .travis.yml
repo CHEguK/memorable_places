@@ -8,6 +8,17 @@ cache: pip
 python:
 - 3.8
 
+env:
+  export SECRET_KEY=SECRET_KEY
+  export NAME_DB=NAME_DB
+  export HOST_DB=HOST_DB
+  export PORT_DB=PORT_DB
+  export USER_DB=USER_DB
+  export PASSWORD_DB=PASSWORD_DB
+  export SOCIAL_AUTH_FACEBOOK_KEY=SOCIAL_AUTH_FACEBOOK_KEY
+  export SOCIAL_AUTH_FACEBOOK_SECRET=SOCIAL_AUTH_FACEBOOK_SECRET
+  export MAPBOX_TOKEN=MAPBOX_TOKEN
+
 # Install pip dependencies
 install:
 - pip install -r requirements.txt
@@ -20,7 +31,7 @@ script:
 deploy:
   provider: heroku
   api_key:
-    secure: SECURE_KEY
+    secure: 'SECURE_KEY'
   app: immense-cove-99982
   on:
     repo:  CHEguK/memorable_places

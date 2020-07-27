@@ -3,5 +3,7 @@ var.txt
 
 .pytest_cache/
 
+__pycache__/
+
 settings_dev.py
 db.sqlite3

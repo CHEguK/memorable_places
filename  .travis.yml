@@ -2,19 +2,20 @@
 language: python
 
 # Cache to speed up the build
-cache: pip
+# cache: pip
 
 # Set the python versions
 python:
-- 3.8
+  - 3.8
 
 # Install pip dependencies
 install:
-- pip install -r requirements.txt
+  - pip install -r requirements.txt
+  - pip install .
 
 # Run the unit test
 script:
-- python manage.py test
+  - python manage.py test
 
 # Deploy to heroku server
 # deploy:

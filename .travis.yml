@@ -20,7 +20,7 @@ script:
 after_success:
   - coveralls
 
-Deploy to heroku server
+# Deploy to heroku server
 deploy:
   provider: heroku
   api_key: $HEROKU_API_KEY

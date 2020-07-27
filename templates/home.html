@@ -1,7 +1,8 @@
 {% extends "base.html" %}
 {% block title %}Home{% endblock %}
 {% block main_content %}
-    <h1>Хранилище ваших воспоминаний</h1>
+    <h1>Архив ваших воспоминаний</h1>
+    <p>Здесь вы можете отметить, где вы бывали и оставить комментарий об этом месте.</p>
     <a href={% url "accounts:login" %}>Войти</a></br>
     <a href={% url "accounts:register" %}>Зарегистрироваться</a>
 {% endblock %}

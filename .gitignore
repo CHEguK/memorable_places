@@ -2,3 +2,6 @@ var.txt
 .vscode/
 
 .pytest_cache/
+
+settings_dev.py
+db.sqlite3

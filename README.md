@@ -21,6 +21,8 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+# Token from https://www.mapbox.com/ for displaying the map in /memories/create.html
 MAPBOX_TOKEN = ''
 ```
 ## Pipenv

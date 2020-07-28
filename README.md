@@ -24,6 +24,10 @@ DATABASES = {
 
 # Token from https://www.mapbox.com/ for displaying the map in /memories/create.html
 MAPBOX_TOKEN = ''
+
+# Facebook APP secret key
+SOCIAL_AUTH_FACEBOOK_KEY = ''     # App ID
+SOCIAL_AUTH_FACEBOOK_SECRET = ''  # App Secret
 ```
 ## Pipenv
 ```bash

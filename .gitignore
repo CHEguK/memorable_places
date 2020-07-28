@@ -6,4 +6,5 @@ var.txt
 __pycache__/
 
 settings_dev.py
+
 db.sqlite3

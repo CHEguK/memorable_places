@@ -8,7 +8,7 @@ toy_project
 
 ## Setting up the environment
 
-Create memorable_plaves/settings_dev.py with following content:
+Create memorable_places/settings_dev.py with following content:
 ```python
 # memorable_plaves/settings_dev.py
 from .settings_shared import *

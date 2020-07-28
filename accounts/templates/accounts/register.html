@@ -7,6 +7,7 @@
         {% for field in user_form %}
         <div class='field'>
             {{ field.label_tag }} {{ field }}
+            {{ field.errors }}
         </div>
         {% endfor %}
         {% csrf_token %}

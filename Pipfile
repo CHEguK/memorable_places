@@ -9,6 +9,7 @@ pylint = "*"
 pycodestyle = "*"
 autopep8 = "*"
 mypy = "*"
+django-stubs = "*"
 
 [packages]
 gunicorn = "*"

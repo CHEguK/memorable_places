@@ -1,3 +1,6 @@
+''' memorable_places/settings_prod.py '''
+import sys
+
 from .settings_shared import *
 
 # SECURITY WARNING: keep the secret key used in production secret!
@@ -16,7 +19,7 @@ DATABASES = {
 }
 
 if 'test' in sys.argv:
-    #Configuration for test database
+    # Configuration for test database
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.sqlite3',

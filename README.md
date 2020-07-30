@@ -11,6 +11,7 @@ toy_project
 Create memorable_places/settings_dev.py with following content:
 ```python
 # memorable_plaves/settings_dev.py
+import sys
 from .settings_shared import *
 
 SECRET_KEY = 'dev'

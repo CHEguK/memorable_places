@@ -8,6 +8,7 @@ parameterized = "*"
 pylint = "*"
 pycodestyle = "*"
 autopep8 = "*"
+mypy = "*"
 
 [packages]
 gunicorn = "*"

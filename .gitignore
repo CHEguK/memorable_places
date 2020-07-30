@@ -1,10 +1,7 @@
 var.txt
 .vscode/
-
 .pytest_cache/
-
 __pycache__/
-
 settings_dev.py
-
 db.sqlite3
+.python-version

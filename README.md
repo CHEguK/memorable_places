@@ -44,6 +44,20 @@ python manage.py runserver
 ```
 
 ## Testing
-```python
+Typing
+```bash
+mypy accounts/ memories/ memorable_places/
+```
+Django tests
+```bash
 python manage.py test
+```
+Codestyle
+```bash
+pycodestyle
+pylint accounts/ memories/ memorable_places/
+```
+Running all tests
+```bash
+./runtests.sh
 ```

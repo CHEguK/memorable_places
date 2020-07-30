@@ -2,4 +2,4 @@
 
 disable=too-few-public-methods,too-many-ancestors,invalid-str-returned
 
-ignore=settings_prod.py,settings_dev.py
+ignore=settings_prod.py,settings_dev.py,migrations

@@ -5,6 +5,9 @@ verify_ssl = true
 
 [dev-packages]
 parameterized = "*"
+pylint = "*"
+pycodestyle = "*"
+autopep8 = "*"
 
 [packages]
 gunicorn = "*"

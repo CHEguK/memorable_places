@@ -20,7 +20,7 @@ class RegistrationForm(forms.ModelForm):
         fields = ("username", "email", "first_name")
         labels = {"username": 'Логин', "email": 'Email', "first_name": 'Имя'}
 
-        def clean_password2(self):
+        def clean_password2(self) -> str:
             ''' Check password are the same '''
             clean_data = self.cleaned_data  # pylint: disable=no-member
             if clean_data["password"] != clean_data["password2"]:

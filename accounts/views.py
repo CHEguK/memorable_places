@@ -1,6 +1,6 @@
 '''accounts/views.py'''
 from django.contrib.auth import authenticate, login
-from django.http import HttpResponse
+from django.http import HttpRequest, HttpResponse
 from django.shortcuts import render
 from django.views import View
 
@@ -10,7 +10,7 @@ from accounts.forms import LoginForm, RegistrationForm
 class LoginView(View):
     '''LoginView'''
     @classmethod
-    def post(cls, request):
+    def post(cls, request: HttpRequest) -> HttpResponse:
         '''post'''
         form = LoginForm(request.POST)
         if form.is_valid():
@@ -23,7 +23,7 @@ class LoginView(View):
             if user is None:
                 return HttpResponse('Неправильный логин и/или пароль')
 
-            if not user.is_active:
+            if not user.is_active:  # type: ignore[attr-defined]
                 return HttpResponse('Ваш аккаунт заблокирован')
 
             login(request, user)
@@ -31,13 +31,13 @@ class LoginView(View):
         return render(request, 'accounts/login.html', {'form': form})
 
     @classmethod
-    def get(cls, request):
+    def get(cls, request: HttpRequest) -> HttpResponse:
         '''get'''
         form = LoginForm()
         return render(request, 'accounts/login.html', {'form': form})
 
 
-def register(request):
+def register(request: HttpRequest) -> HttpResponse:
     '''register'''
     if request.method == "POST":
         form = RegistrationForm(request.POST)

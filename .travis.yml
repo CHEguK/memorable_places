@@ -10,7 +10,8 @@ python:
 
 # Install pip dependencies
 install: 
-  - pip install -r requirements.txt
+  - pip install pipenv
+  - pipenv install --dev
   - pip install coveralls
 
 # Run the unit test

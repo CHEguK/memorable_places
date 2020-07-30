@@ -1,3 +1,4 @@
-from django.test import TestCase
+''' accounts/tests.py '''
+from django.test import TestCase  # pylint: disable=unused-import
 
 # Create your tests here.

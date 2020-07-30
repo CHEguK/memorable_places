@@ -1,5 +1,5 @@
 [MASTER]
 
-disable=too-few-public-methods
+disable=too-few-public-methods,too-many-ancestors
 
 ignore=settings_prod.py,settings_dev.py

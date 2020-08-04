@@ -13,7 +13,11 @@
 <form action="." method="post" class="memories-create">
     {% for field in form %}
         <div class='field'>
-            {{ field.label_tag }} {{ field }}
+            {% if not field.is_hidden %}
+                {{ field.label_tag }} {{ field }}
+            {% else %}
+                {{ field }}
+            {% endif %}
             {{ field.errors }}
         </div>
     {% endfor %}
@@ -64,5 +68,13 @@
     }
     
     marker.on('dragend', onDragEnd);
+
+    function saveCoordinates() {
+        document.querySelector('[name=longitude]').value =
+            marker.getLngLat().lng;
+        document.querySelector('[name=latitude]').value =
+            marker.getLngLat().lat;
+    }
+    marker.on('dragend', saveCoordinates);
 </script>
 {% endblock %}

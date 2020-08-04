@@ -8,8 +8,8 @@ class MemoryItem(models.Model):
     ''' Memory Item '''
     name = models.CharField(max_length=64)
     comment = models.TextField()
-    longitude = models.CharField(max_length=64)
-    latitude = models.CharField(max_length=64)
+    longitude = models.CharField(max_length=64, default=60.60388)
+    latitude = models.CharField(max_length=64, default=56.8444)
     owner = models.ForeignKey(User, on_delete=models.CASCADE,
                               related_name='memories')
 

@@ -121,6 +121,7 @@ class CreateMemoryViewTest(TestCase):
         ''' Test create memory '''
         self.client.login(username='test', password='test')
         self.client.post(reverse('memories:create'),
-                         {'name': 'test', 'comment': 'test comment'})
+                         {'name': 'test', 'comment': 'test comment',
+                          'longitude': 0, 'latitude': 0})
         data = str(MemoryItem.objects.get(id=1))  # pylint: disable=no-member
         self.assertEqual(data, 'test')

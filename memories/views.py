@@ -60,6 +60,7 @@ class MemoryDetailsView(DetailView):
     ''' Memory Details View '''
     model = MemoryItem
     template_name = 'memories/details.html'
+    extra_context = {"mapbox_token": settings.MAPBOX_TOKEN}
 
 
 def delete_memory(request, uid):  # pylint: disable=unused-argument

@@ -42,7 +42,6 @@ class MemoriesCreateView(View):
 
     def post(self, request):
         ''' Post '''
-        print('AAA', request)
         form = MemoryItemForm(request.POST)
         if form.is_valid():
             new_memory = form.save(commit=False)

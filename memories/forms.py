@@ -9,9 +9,8 @@ class MemoryItemForm(forms.ModelForm):
     class Meta:
         ''' Meta class '''
         model = MemoryItem
-        fields = ('name', 'comment', 'coordinates', 'longitude', 'latitude')
+        fields = ('name', 'comment', 'longitude', 'latitude')
         labels = {"name": "Название", "comment": "Комментарий"}
         widgets = {"comment": forms.Textarea(attrs={'rows': 5}),
-                   "coordinates": forms.HiddenInput(),
                    "longitude": forms.HiddenInput(),
                    "latitude": forms.HiddenInput()}
